@@ -1,0 +1,42 @@
+html {
+    background-color: rgb(21, 97, 121);
+}
+table {
+    width: 99%;
+}
+.header {
+    border: 10px solid #000;
+    text-align: center;
+}
+div {
+    border: 5px solid #000;
+}
+.list-item {
+    background-color: rgb(211, 211, 211);
+    height: 50px;
+}
+.button {
+    position: relative;
+    float: right;
+}
+#rot {
+    background-color: red;
+    width: 33%;
+}
+#gelb {
+    background-color: orange;
+    width: 33%;
+}
+#grün {
+    background-color: green;
+    width: 33%;
+}
+#todo {
+    background-color: red;
+}
+#inprogress {
+    background-color: orange;
+}
+#done {
+    background-color: green;
+}

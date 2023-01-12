@@ -4,9 +4,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
     <title>Kanban Board</title>
 </head>
 <body>
     <div class="header"> <h1>Kanban Board</h1> </div>
+    <br>
+    <input id="input" type="text">
+    <button id="submit" onclick="addItem()">Abschicken</button>
+    <p></p>
+    <table>
+        <table border="10">
+            <tr>
+                <th id="rot"><h2>Todo</h2></th>
+                <th id="gelb"><h2>In Progress</h2></th>
+                <th id="grün"><h2>Done</h2></th>
+            </tr>
+            <tr>
+                <td id="todo"></td>
+                <td id="inprogress"></td>
+                <td id="done"></td>
+            </tr>
+        </table>
+    </table>
+    <ul id="list"></ul>
 </body>
 </html>
