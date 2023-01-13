@@ -11,9 +11,15 @@
 <body>
     <div class="header"> <h1>Kanban Board</h1> </div>
     <br>
-    <input id="input" type="text">
-    <button id="submit" onclick="addItem()">Abschicken</button>
+    <div id="formular">
+        <h3>Aufgabe:</h3><input id="input" type="text" onkeyup="myFunction()"><br>
+        <h3>Person:</h3><input id="input_person" type="text" onkeyup="myFunction_2()"><br>
+        <h3>Datum:</h3><input id="input_datum" type="text" onkeyup="myFunction_3()"><br>
+        <p></p>
+        <button id="submit" onclick="addItem()">Abschicken</button>
+    </div>
     <p></p>
+    <div id="todo_list">
     <table>
         <table border="10">
             <tr>
@@ -29,5 +35,6 @@
         </table>
     </table>
     <ul id="list"></ul>
+</div>
 </body>
 </html>
