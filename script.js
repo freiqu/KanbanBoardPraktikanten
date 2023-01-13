@@ -1,9 +1,7 @@
-
-// function addItem() {
-//     console.log("Hello, World!")
-//     let input = document.getElementById("input");
-//     appendChildren 
-// }
+window.onload = () => {
+    let myListItemNew = localStorage.getItem("myListItem");
+    console.log(myListItemNew);
+} 
 
 function addItem(e) {
     let list = document.getElementById("todo");
@@ -21,46 +19,51 @@ function addItem(e) {
         let buttonItem_2 = document.createElement("button");
         buttonItem_2.classList += 'button';
         buttonItem_2.innerHTML = "Delete";
-        // buttonItem.addEventListener("click", (ev) => {
-        //     verschiebenNachInprogress(ev, listItem, buttonItem)
-        // })
-        listItem.append(buttonItem);
-        listItem.append(buttonItem_2);
+        listItem.appendChild(buttonItem);
+        listItem.appendChild(buttonItem_2);
         input.value = "";
         input_person.value = "";
         input_datum.value = "";
         list.appendChild(listItem);
+        // localStorage.setItem("todo", "list-item");
+        let myListItem = JSON.stringify(listItem);
+        localStorage.setItem("myListItem", myListItem);
+        console.log(localStorage);
         buttonItem_2.addEventListener("click", (ev) => {
             list.removeChild(listItem);
         })
         buttonItem.addEventListener("click", (ev) => {
-            verschiebenNachInprogress(ev, listItem, buttonItem, buttonItem_2)
+            listItem.removeChild(buttonItem_2);
+            verschiebenNachInprogress(ev, listItem, buttonItem)
         })
     }
 }
 
-function verschiebenNachInprogress(ev, listItem, buttonItem, buttonItem_2) {
+function verschiebenNachInprogress(ev, listItem, buttonItem) {
     let list = document.getElementById("inprogress");
+    let buttonItem_2 = document.createElement("button");
+    buttonItem_2.classList += 'button';
+    buttonItem_2.innerHTML = "Delete";
+    listItem.appendChild(buttonItem_2);
     list.appendChild(listItem);
     buttonItem.innerHTML = "Done";
     buttonItem_2.addEventListener("click", (ev) => {
         list.removeChild(listItem);
     })
     buttonItem.addEventListener("click", (evn) => {
-        verschiebenNachDone(ev, listItem, buttonItem, buttonItem_2)
+        listItem.removeChild(buttonItem_2);
+        verschiebenNachDone(ev, listItem, buttonItem)
     })
 }
 
-function verschiebenNachDone(evn, listItem, buttonItem, buttonItem_2) {
+function verschiebenNachDone(evn, listItem, buttonItem) {
     let list = document.getElementById("done");
     // listItem.removeChild(buttonItem_2);
     list.appendChild(listItem);
     buttonItem.innerHTML = "Delete";
     buttonItem.addEventListener("click", (e) => {
-        list.removeChild(listItem);
-    })
-    buttonItem_2.addEventListener("click", (e) => {
-        list.removeChild(listItem);
+        // list.parentElement.remove(listItem);
+        list.removeChild(listItem)
     })
 }
 
@@ -85,6 +88,5 @@ input_datum.addEventListener("keyup", (event) => {
     }
 })}
 
-// localStorage.setItem("inhalt", body);
-
-// document.getElementById("body").innerHTML = localStorage.getItem("inhalt");
+// localStorage.setItem("todo", "list-item");
+// localStorage.getItem("todo");
