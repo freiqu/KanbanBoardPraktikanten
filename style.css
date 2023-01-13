@@ -1,19 +1,20 @@
 html {
-    background-color: rgb(21, 97, 121);
+    background-color: moccasin;
 }
 table {
     width: 85%;
+    border-color: antiquewhite;
 }
 .header {
-    border: 10px solid #000;
+    border: 10px solid rgb(80, 48, 28);
     text-align: center;
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(151, 136, 109);
 }
 div {
-    border: 5px solid #000;
+    border: 5px solid rgb(80, 48, 28);
 }
 .list-item {
-    background-color: rgb(211, 211, 211);
+    background-color: rgb(238, 224, 199);
     height: 100px;
 }
 .button {
@@ -21,25 +22,25 @@ div {
     float: right;
 }
 #rot {
-    background-color: red;
+    background-color: brown;
     width: 33%;
 }
 #gelb {
-    background-color: orange;
+    background-color: chocolate;
     width: 33%;
 }
 #grün {
-    background-color: green;
+    background-color: #556b2f;
     width: 33%;
 }
 #todo {
-    background-color: red;
+    background-color: brown;
 }
 #inprogress {
-    background-color: orange;
+    background-color: chocolate;
 }
 #done {
-    background-color: green;
+    background-color: #556b2f;
 }
 
 button{
@@ -63,4 +64,5 @@ button:hover{
 #formular {
     /* display: flex; */
     float: left;
+    background-color: rgb(151, 136, 109);
 }
