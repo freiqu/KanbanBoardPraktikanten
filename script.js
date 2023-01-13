@@ -53,10 +53,13 @@ function verschiebenNachInprogress(ev, listItem, buttonItem, buttonItem_2) {
 
 function verschiebenNachDone(evn, listItem, buttonItem, buttonItem_2) {
     let list = document.getElementById("done");
-    listItem.remove(buttonItem_2)
+    // listItem.removeChild(buttonItem_2);
     list.appendChild(listItem);
     buttonItem.innerHTML = "Delete";
     buttonItem.addEventListener("click", (e) => {
+        list.removeChild(listItem);
+    })
+    buttonItem_2.addEventListener("click", (e) => {
         list.removeChild(listItem);
     })
 }
@@ -82,6 +85,6 @@ input_datum.addEventListener("keyup", (event) => {
     }
 })}
 
-localStorage.setItem("inhalt", body);
+// localStorage.setItem("inhalt", body);
 
-document.getElementById("body").innerHTML = localStorage.getItem("inhalt");
+// document.getElementById("body").innerHTML = localStorage.getItem("inhalt");

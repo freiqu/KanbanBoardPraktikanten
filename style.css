@@ -2,11 +2,12 @@ html {
     background-color: rgb(21, 97, 121);
 }
 table {
-    width: 99%;
+    width: 85%;
 }
 .header {
     border: 10px solid #000;
     text-align: center;
+    background-color: rgb(255, 255, 255);
 }
 div {
     border: 5px solid #000;
@@ -60,5 +61,6 @@ button:hover{
     border: none;
 }
 #formular {
+    /* display: flex; */
     float: left;
 }
