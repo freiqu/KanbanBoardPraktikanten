@@ -1,7 +1,13 @@
-window.onload = () => {
-    let myListItemNew = localStorage.getItem("myListItem");
-    console.log(myListItemNew);
-} 
+// window.onload = () => {
+//     let myListItemNew = localStorage.getItem("ListItem");
+//     console.log(myListItemNew);
+// } 
+
+// window.onbeforeunload = () => {
+//     var table = document.getElementById("tabellen_inhalt");
+//     var table_inhalt = table.innerHTML;
+//     console.log(table_inhalt);
+// }
 
 function addItem(e) {
     let list = document.getElementById("todo");
@@ -25,10 +31,9 @@ function addItem(e) {
         input_person.value = "";
         input_datum.value = "";
         list.appendChild(listItem);
-        // localStorage.setItem("todo", "list-item");
-        let myListItem = JSON.stringify(listItem);
-        localStorage.setItem("myListItem", myListItem);
-        console.log(localStorage);
+        // let myListItem = JSON.stringify(listItem);
+        // localStorage.setItem("ListItem", myListItem);
+        // console.log(localStorage);
         buttonItem_2.addEventListener("click", (ev) => {
             list.removeChild(listItem);
         })
