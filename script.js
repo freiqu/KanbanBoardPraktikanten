@@ -17,10 +17,10 @@ function addItem(e) {
         listItem.innerHTML = "<b>Aufgabe:</b>" + inputValue + "<br>" + "<b>Person:</b>" + person + "<br>" + "<b>Datum:</b>" + datum; // <div class="list-item">test</div>
         let buttonItem = document.createElement("button");
         buttonItem.classList += 'button';
-        buttonItem.innerHTML = "In Progress";
+        buttonItem.innerHTML = "In Progress→";
         let buttonItem_2 = document.createElement("button");
         buttonItem_2.classList += 'button';
-        buttonItem_2.innerHTML = "Delete";
+        buttonItem_2.innerHTML = "Delete🗑️";
         // buttonItem.addEventListener("click", (ev) => {
         //     verschiebenNachInprogress(ev, listItem, buttonItem)
         // })
@@ -42,7 +42,7 @@ function addItem(e) {
 function verschiebenNachInprogress(ev, listItem, buttonItem, buttonItem_2) {
     let list = document.getElementById("inprogress");
     list.appendChild(listItem);
-    buttonItem.innerHTML = "Done";
+    buttonItem.innerHTML = "Done→";
     buttonItem_2.addEventListener("click", (ev) => {
         list.removeChild(listItem);
     })
@@ -55,7 +55,7 @@ function verschiebenNachDone(evn, listItem, buttonItem, buttonItem_2) {
     let list = document.getElementById("done");
     // listItem.removeChild(buttonItem_2);
     list.appendChild(listItem);
-    buttonItem.innerHTML = "Delete";
+    buttonItem.innerHTML = "Delete🗑️";
     buttonItem.addEventListener("click", (e) => {
         list.removeChild(listItem);
     })
