@@ -1,20 +1,20 @@
 html {
-    background-color: moccasin;
+    background-color: #ffdfa9e8;
 }
 table {
     width: 85%;
     border-color: antiquewhite;
 }
 .header {
-    border: 10px solid rgb(80, 48, 28);
+    border: 2px solid rgb(80, 48, 28);
     text-align: center;
-    background-color: rgb(151, 136, 109);
+    background-color: #a75525e8;
 }
 div {
-    border: 5px solid rgb(80, 48, 28);
+    border: 1px solid rgb(80, 48, 28);
 }
 .list-item {
-    background-color: rgb(238, 224, 199);
+    background-color: rgb(255, 236, 215);
     height: 100px;
 }
 .button {
@@ -22,25 +22,25 @@ div {
     float: right;
 }
 #rot {
-    background-color: brown;
+    background-color: #AE431E;
     width: 33%;
 }
 #gelb {
-    background-color: chocolate;
+    background-color: #D06224;
     width: 33%;
 }
 #grün {
-    background-color: #556b2f;
+    background-color: #8A8635;
     width: 33%;
 }
 #todo {
-    background-color: brown;
+    background-color: #a83f1c75;
 }
 #inprogress {
-    background-color: chocolate;
+    background-color: #d0632475;
 }
 #done {
-    background-color: #556b2f;
+    background-color: #8a863575
 }
 
 button{
@@ -64,5 +64,5 @@ button:hover{
 #formular {
     /* display: flex; */
     float: left;
-    background-color: rgb(151, 136, 109);
+    background-color: #a75525e8;
 }
