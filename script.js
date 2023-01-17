@@ -20,12 +20,12 @@ function addItem(e) {
         let listItem = document.createElement("div"); // <div></div>
         listItem.classList += "list-item"; // <div class="list-item"></div>
         listItem.innerHTML = "<b>Aufgabe:</b>" + inputValue + "<br>";
-        listItem.innerHTML += "<b>Person👥:</b>"
+        listItem.innerHTML += "<b>Person👥:</b>";
         
         let inputPerson = document.createElement("input");
         inputPerson.classList += "input_person";
         inputPerson.innerHTML = "type='text'";
-        listItem.innerHTML += "<b>Datum🗓:</b>"
+        listItem.innerHTML += "<b>Datum🗓:</b>";
         let inputDatum = document.createElement("input");
         inputDatum.classList += 'input_datum';
         inputDatum.innerHTML = "type='text'";
