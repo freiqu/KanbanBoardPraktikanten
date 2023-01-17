@@ -56,7 +56,7 @@ function addItem(e) {
         })
         buttonItem.addEventListener("click", (ev) => {
             let inputPerson = document.getElementsByClassName("input_person");
-             let person = inputPerson.value;
+            let person = inputPerson.value;
             let inputDatum = document.getElementsByClassName("input_datum");
             let datum = inputDatum.value;
             listItem.removeChild(buttonItem_2);
