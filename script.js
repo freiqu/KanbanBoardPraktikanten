@@ -42,7 +42,6 @@ function addItem(e) {
         input.value = "";
         //input_person.value = "";
         //input_datum.value = "";
-
         listItem.appendChild(inputPerson);
         listItem.appendChild(inputDatum);
         list.appendChild(listItem);
@@ -57,6 +56,7 @@ function addItem(e) {
         buttonItem.addEventListener("click", (ev) => {
             let inputPerson = document.getElementsByClassName("input_person");
             let person = inputPerson.value;
+            console.log(inputPerson.value);
             let inputDatum = document.getElementsByClassName("input_datum");
             let datum = inputDatum.value;
             listItem.removeChild(buttonItem_2);
@@ -70,10 +70,11 @@ function verschiebenNachInprogress(ev, listItem, buttonItem, person, datum, inpu
     let buttonItem_2 = document.createElement("button");
     buttonItem_2.classList += 'button';
     buttonItem_2.innerHTML = "Delete 🗑️";
-    listItem.appendChild(buttonItem_2);
     listItem.innerHTML = "<b>Aufgabe:</b>" + inputValue + "<br>" + "<b>Person:</b>" + person + "<br>" + "<b>Datum:</b>" + datum;
-    list.appendChild(listItem);
     buttonItem.innerHTML = "Done→";
+    listItem.appendChild(buttonItem);
+    listItem.appendChild(buttonItem_2);
+    list.appendChild(listItem);
     buttonItem_2.addEventListener("click", (ev) => {
         list.removeChild(listItem);
     })
