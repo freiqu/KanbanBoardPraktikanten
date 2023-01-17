@@ -60,13 +60,12 @@ function addItem(e) {
             let inputDatum = document.getElementsByClassName("input_datum");
             let datum = inputDatum.value;
             listItem.removeChild(buttonItem_2);
-            verschiebenNachInprogress(ev, listItem, buttonItem, inputPerson, inputDatum, inputValue)
-            // verschiebenNachInprogress(ev, listItem, buttonItem);
+            verschiebenNachInprogress(ev, listItem, buttonItem, person, datum, inputValue)
         })
     }
 }
 
-function verschiebenNachInprogress(ev, listItem, buttonItem, person, datum) {
+function verschiebenNachInprogress(ev, listItem, buttonItem, person, datum, inputValue) {
     let list = document.getElementById("inprogress");
     let buttonItem_2 = document.createElement("button");
     buttonItem_2.classList += 'button';
