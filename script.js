@@ -22,14 +22,14 @@ function addItem(e) {
         let listItem = document.createElement("div"); // <div></div>
         listItem.classList += "list-item"; // <div class="list-item"></div>
         listItem.innerHTML = "<b>Aufgabe:</b>" + inputValue + "<br>";
-        listItem.innerHTML += "<b>Person:</b>"
+        listItem.innerHTML += "<b>Person👥:</b>"
         
         let inputPerson = document.createElement("input");
         inputPerson.classList += 'input_person';
         inputPerson.innerHTML = "type='text'";
-        listItem.innerHTML += "<b>Datum:</b>"
+        listItem.innerHTML += "<b>Datum🗓:</b>"
         let inputDatum = document.createElement("input");
-        inputPerson.classList += 'input_datum';
+        inputDatum.classList += 'input_datum';
         inputDatum.innerHTML = "type='text'";
 
         //listItem.innerHTML = "<b>Aufgabe:</b>" + inputValue + "<br>" + "<b>Person:</b>" + person + "<br>" + "<b>Datum:</b>" + datum; // <div class="list-item">test</div>
@@ -57,9 +57,9 @@ function addItem(e) {
             list.removeChild(listItem);
         })
         buttonItem.addEventListener("click", (ev) => {
-            let inputPerson = document.getElementById("input_person");
-            let person = inputPerson.value;
-            let inputDatum = document.getElementById("input_datum");
+            let inputPerson = document.getElementsByClassName("input_person");
+             let person = inputPerson.value;
+            let inputDatum = document.getElementsByClassName("input_datum");
             let datum = inputDatum.value;
             listItem.removeChild(buttonItem_2);
             verschiebenNachInprogress(ev, listItem, buttonItem, person, datum. imputValue)
