@@ -1,13 +1,19 @@
 window.onload = () => {
     let myListItemNew = localStorage.getItem("inhaltAlt");
-    //console.log(myListItemNew);
-    let ort = document.getElementById("tabellenInhalt");
-    ort.innerHTML = myListItemNew;
+    console.log(myListItemNew);
+    if (myListItemNew != null && myListItemNew != "") {
+        let ort = document.getElementById("tabellenInhalt");
+        ort.innerHTML = myListItemNew;
+    }
 } 
 
 window.onbeforeunload = () => {
     let inhalt = tabellenInhalt.innerHTML;
     localStorage.setItem("inhaltAlt", inhalt)
+}
+
+function remove(list, listItem) {
+    list.removeChild(listItem);
 }
 
 function addItem(e) {
