@@ -15,7 +15,11 @@ div {
 }
 .list-item {
     background-color: rgb(238, 224, 199);
-    height: 100px;
+    height: 150px;
+}
+.list-item-in-progress {
+    background-color: rgb(238, 224, 199);
+    height: 150px;
 }
 .button {
     position: relative;
