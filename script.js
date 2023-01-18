@@ -10,7 +10,6 @@ window.onload = () => {
     let container = document.getElementsByClassName("list-item");
     let person = document.getElementsByClassName("input-person");
     let datum = document.getElementsByClassName("input-datum");
-    //let inputValue = "test!! hier muss später noch richtiger ihnalt";
     let inputValue = document.getElementsByClassName("paragraph");
 
     for (let i = 0; i < deleteButtons.length; i++) {
@@ -36,9 +35,17 @@ window.onload = () => {
     let verschiebenButtonsDone = document.getElementsByClassName("button-nach-done");
 
     let listItem_fuer_done = document.getElementsByClassName("list-item-in-progress")
-    for (let i = 0; i < verschiebenButtonsDone; i++) {
+    // for (let i = 0; i < verschiebenButtonsDone; i++) {
+    //     verschiebenButtonsDone[i].addEventListener("click", (ev) => {
+    //         verschiebenNachDone(evn, listItem_fuer_done[i])
+    //     })
+    // }
+    for (let i = 0; i < verschiebenButtonsDone.length; i++) {
         verschiebenButtonsDone[i].addEventListener("click", (ev) => {
-            verschiebenNachDone(evn, listItem_fuer_done[i])
+            //let right_container = ev.target.parentElement;
+            // ev.target.parentElement.removeChild(buttonItem_2);
+            // ev.target.parentElement.removeChild(buttonItem);
+            verschiebenNachDone(ev, ev.target.parentElement)
         })
     }
 }
@@ -52,21 +59,6 @@ window.onbeforeunload = () => {
         localStorage.clear;
     }
 }
-
-// window.onload = () => {
-//     let inhaltAlt = document.cookie;
-//     let ort = document.getElementById("tabellenInhalt");
-//     ort.innerHTML = ort;
-// }
-
-// window.onbeforeunload = () => {
-//     let inhalt = tabellen.innerHTML;
-//     var a = new Date();
-//     a = new Date(a.getTime() +1000*60*60*24*365);
-//     document.cookie = 'inhaltAlt=inhalt; expires='+a.toGMTString()+';';
-//     // document.cookie = 'inhaltAlt = inhalt;';
-// }
-
 
 function remove(list, listItem) {
     list.removeChild(listItem);
@@ -89,7 +81,6 @@ function addItem(e) {
         paragraph.innerHTML = inputValue;
         listItem.appendChild(paragraph);
         listItem.innerHTML += "<b>Person👥:</b>";
-
         let inputPerson = document.createElement("input");
         inputPerson.classList += "input-person";
         inputPerson.innerHTML = "type='text'";
@@ -142,8 +133,8 @@ function verschiebenNachInprogress(ev, listItem, buttonItem, person, datum, inpu
     buttonItem_2.innerHTML = "Delete 🗑️";
     listItem.innerHTML = "<b>Aufgabe:</b>" + inputValue + "<br>" + "<b>Person:</b>" + person + "<br>" + "<b>Datum:</b>" + datum;
     //listItem.innerHTML += "<br>" + "<b>Person:</b>" + person + "<br>" + "<b>Datum:</b>" + datum;
+    buttonItem.classList = buttonItem.classList = 'button-nach-done';
     buttonItem.innerHTML = "Done→";
-    buttonItem.classList += 'button-nach-done';
     listItem.classList = 'list-item-in-progress';
     listItem.appendChild(buttonItem);
     listItem.appendChild(buttonItem_2);
@@ -152,8 +143,8 @@ function verschiebenNachInprogress(ev, listItem, buttonItem, person, datum, inpu
         list.removeChild(listItem);
     })
     buttonItem.addEventListener("click", (evn) => {
-        listItem.removeChild(buttonItem_2);
-        listItem.removeChild(buttonItem);
+        //listItem.removeChild(buttonItem_2);
+        //listItem.removeChild(buttonItem);
         verschiebenNachDone(ev, listItem)
     })
 }
