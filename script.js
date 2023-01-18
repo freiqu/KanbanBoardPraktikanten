@@ -20,12 +20,12 @@ function addItem(e) {
         let listItem = document.createElement("div"); // <div></div>
         listItem.classList += "list-item"; // <div class="list-item"></div>
         listItem.innerHTML = "<b>Aufgabe:</b>" + inputValue + "<br>";
-        listItem.innerHTML += "<b>Person👥:</b>";
+        listItem.innerHTML += "<b>Person:</b>";
         
         let inputPerson = document.createElement("input");
         inputPerson.classList += "input_person";
         inputPerson.innerHTML = "type='text'";
-        listItem.innerHTML += "<b>Datum🗓:</b>";
+        listItem.innerHTML += "<b>Datum:</b>";
         let inputDatum = document.createElement("input");
         inputDatum.classList += 'input_datum';
         inputDatum.innerHTML = "type='text'";
@@ -36,7 +36,7 @@ function addItem(e) {
         buttonItem.innerHTML = "In Progress→";
         let buttonItem_2 = document.createElement("button");
         buttonItem_2.classList += 'button';
-        buttonItem_2.innerHTML = "Delete 🗑️";
+        buttonItem_2.innerHTML = "🗑️";
         listItem.appendChild(buttonItem);
         listItem.appendChild(buttonItem_2);
         input.value = "";
@@ -69,7 +69,7 @@ function verschiebenNachInprogress(ev, listItem, buttonItem, person, datum, inpu
     let list = document.getElementById("inprogress");
     let buttonItem_2 = document.createElement("button");
     buttonItem_2.classList += 'button';
-    buttonItem_2.innerHTML = "Delete 🗑️";
+    buttonItem_2.innerHTML = "🗑️";
     listItem.appendChild(buttonItem_2);
     listItem.innerHTML = "<b>Aufgabe:</b>" + inputValue + "<br>" + "<b>Person:</b>" + person + "<br>" + "<b>Datum:</b>" + datum;
     list.appendChild(listItem);
@@ -87,7 +87,7 @@ function verschiebenNachDone(evn, listItem, buttonItem) {
     let list = document.getElementById("done");
     // listItem.removeChild(buttonItem_2);
     list.appendChild(listItem);
-    buttonItem.innerHTML = "Delete 🗑️";
+    buttonItem.innerHTML = "🗑️";
     buttonItem.addEventListener("click", (e) => {
         // list.parentElement.remove(listItem);
         list.removeChild(listItem)
