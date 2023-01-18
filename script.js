@@ -17,17 +17,17 @@ function addItem(e) {
     if (inputValue != "") {
         let listItem = document.createElement("div"); // <div></div>
         listItem.classList += "list-item"; // <div class="list-item"></div>
-        listItem.innerHTML = "<b>Aufgabe📚:</b>" + " " + inputValue + "<p></p><br>";
+        listItem.innerHTML = "<b>Aufgabe:</b>" + " " + inputValue + "<p></p><br>";
 
-
+        
         let inputPerson = document.createElement("input");
-        inputPerson.placeholder = "Person👥:";
+        inputPerson.placeholder = "Person:";
         inputPerson.style.fontWeight = "bold";
         inputPerson.classList += "input_person";
         inputPerson.innerHTML = "type='text'";
-
+        
         let inputDatum = document.createElement("input");
-        inputDatum.placeholder = "Datum🗓:";
+        inputDatum.placeholder = "Datum:";
         inputDatum.style.fontWeight = "bold";
         inputDatum.classList += 'input_datum';
         inputDatum.innerHTML = "type='text'";
@@ -35,10 +35,10 @@ function addItem(e) {
         //listItem.innerHTML = "<b>Aufgabe:</b>" + inputValue + "<br>" + "<b>Person:</b>" + person + "<br>" + "<b>Datum:</b>" + datum; // <div class="list-item">test</div>
         let buttonItem = document.createElement("button");
         buttonItem.classList += 'button';
-        buttonItem.innerHTML = "In Progress→";
+        buttonItem.innerHTML = "In Progress ➞";
         let buttonItem_2 = document.createElement("button");
         buttonItem_2.classList += 'button';
-        buttonItem_2.innerHTML = "Delete 🗑️";
+        buttonItem_2.innerHTML = "Delete ✖";
         listItem.appendChild(buttonItem);
         listItem.appendChild(buttonItem_2);
         input.value = "";
@@ -74,9 +74,9 @@ function verschiebenNachInprogress(ev, listItem, buttonItem, person, datum, inpu
     let list = document.getElementById("inprogress");
     let buttonItem_2 = document.createElement("button");
     buttonItem_2.classList += 'button';
-    buttonItem_2.innerHTML = "Delete 🗑️";
-    listItem.innerHTML = "<b>Aufgabe📚:</b>" + " " + inputValue + "<p></p>" + "<b>Person👥:</b>" + " " + person + "<p><p/>" + "<b>Datum🗓:</b>" + " " + datum;
-    buttonItem.innerHTML = "Done→";
+    buttonItem_2.innerHTML = "Delete ✖";
+    listItem.innerHTML = "<b>Aufgabe:</b>" + " " + inputValue + "<p></p>" + "<b>Person:</b>" + " " + person + "<p><p/>" + "<b>Datum:</b>" + " " + datum;
+    buttonItem.innerHTML = "Done ➞";
     listItem.appendChild(buttonItem);
     listItem.appendChild(buttonItem_2);
     list.appendChild(listItem);
@@ -93,7 +93,7 @@ function verschiebenNachDone(evn, listItem, buttonItem) {
     let list = document.getElementById("done");
     // listItem.removeChild(buttonItem_2);
     list.appendChild(listItem);
-    buttonItem.innerHTML = "Delete 🗑️";
+    buttonItem.innerHTML = "Delete ✖";
     buttonItem.addEventListener("click", (e) => {
         // list.parentElement.remove(listItem);
         list.removeChild(listItem)

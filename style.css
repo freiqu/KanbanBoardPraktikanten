@@ -1,20 +1,20 @@
 html {
-    background-color: moccasin;
+    background-color: #ffdfa9e8;
 }
 table {
     width: 85%;
     border-color: antiquewhite;
 }
 .header {
-    border: 10px solid rgb(80, 48, 28);
+    border: 2px solid rgb(80, 48, 28);
     text-align: center;
-    background-color: rgb(151, 136, 109);
+    background-color: #a75525e8;
 }
 div {
-    border: 5px solid rgb(80, 48, 28);
+    border: 1px solid rgb(80, 48, 28);
 }
 .list-item {
-    background-color: rgb(238, 224, 199);
+    background-color: rgb(255, 236, 215);
     height: 100px;
 }
 .button {
@@ -23,38 +23,39 @@ div {
     float: right;
 }
 #rot {
-    background-color: brown;
+    background-color: #AE431E;
     width: 33%;
 }
 #gelb {
-    background-color: chocolate;
+    background-color: #D06224;
     width: 33%;
 }
 #grün {
-    background-color: #556b2f;
+    background-color: #8A8635;
     width: 33%;
 }
 #todo {
-    background-color: brown;
+    background-color: #a83f1c75;
 }
 #inprogress {
-    background-color: chocolate;
+    background-color: #d0632475;
 }
 #done {
-    background-color: #556b2f;
+    background-color: #8a863575
 }
 
 button{
     border:none;
-    border-radius:5px;
+    border-radius:2px;
     padding:10px 15px;
     font-size:18px;
     cursor:pointer;
     margin-left: 10px;
+    background-color:rgb(230, 213, 193) ;
 }
   
 button:hover{
-    background-color:rgb(202, 202, 202);
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 100px 0 rgba(0,0,0,0.19);
 }
 #submit {
     margin-left: 90px;
@@ -66,5 +67,26 @@ button:hover{
 #formular {
     /* display: flex; */
     float: left;
-    background-color: rgb(151, 136, 109);
+    background-color: #a75525e8;
+}
+body {
+    background: linear-gradient(-45deg, #8A8635, #E9C891, #d063249c, #F4EEED);
+    /* #C3BA85, #FCF9BE, #FFDCA9, #FAAB78, #FFB3B3);*/
+    background-size: 400% 400%;
+    width: 100vw;
+    height: 100vh;
+    margin: 0px;
+    padding: 7px;
+    animation: gradient 15s ease infinite;
+}
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
