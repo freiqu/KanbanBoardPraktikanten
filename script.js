@@ -1,11 +1,3 @@
-window.onload = () => {
-    let myListItemNew = localStorage.getItem("inhaltAlt");
-    console.log(myListItemNew);
-    if (myListItemNew != null && myListItemNew != "") {
-        let ort = document.getElementById("tabellenInhalt");
-        ort.innerHTML = myListItemNew;
-    }
-} 
 
 window.onbeforeunload = () => {
     let inhalt = tabellenInhalt.innerHTML;
@@ -25,14 +17,18 @@ function addItem(e) {
     if (inputValue != "") {
         let listItem = document.createElement("div"); // <div></div>
         listItem.classList += "list-item"; // <div class="list-item"></div>
-        listItem.innerHTML = "<b>Aufgabe:</b>" + inputValue + "<br>";
-        listItem.innerHTML += "<b>Person👥:</b>";
-        
+        listItem.innerHTML = "<b>Aufgabe📚:</b>" + " " + inputValue + "<p></p><br>";
+
+
         let inputPerson = document.createElement("input");
+        inputPerson.placeholder = "Person👥:";
+        inputPerson.style.fontWeight = "bold";
         inputPerson.classList += "input_person";
         inputPerson.innerHTML = "type='text'";
-        listItem.innerHTML += "<b>Datum🗓:</b>";
+
         let inputDatum = document.createElement("input");
+        inputDatum.placeholder = "Datum🗓:";
+        inputDatum.style.fontWeight = "bold";
         inputDatum.classList += 'input_datum';
         inputDatum.innerHTML = "type='text'";
 
@@ -49,7 +45,9 @@ function addItem(e) {
         //input_person.value = "";
         //input_datum.value = "";
         listItem.appendChild(inputPerson);
+
         listItem.appendChild(inputDatum);
+
         list.appendChild(listItem);
         //---------------
         // let myListItem = listItem.innerHTML;
@@ -60,11 +58,12 @@ function addItem(e) {
             list.removeChild(listItem);
         })
         buttonItem.addEventListener("click", (ev) => {
-            let inputPerson = document.getElementsByClassName("input_person");
+            // let inputPerson = document.getElementsByClassName("input_person");
             let person = inputPerson.value;
-            console.log(inputPerson.value);
-            let inputDatum = document.getElementsByClassName("input_datum");
+            console.log(person);
+            // let inputDatum = document.getElementsByClassName("input_datum");
             let datum = inputDatum.value;
+            console.log(datum);
             listItem.removeChild(buttonItem_2);
             verschiebenNachInprogress(ev, listItem, buttonItem, person, datum, inputValue)
         })
@@ -76,7 +75,7 @@ function verschiebenNachInprogress(ev, listItem, buttonItem, person, datum, inpu
     let buttonItem_2 = document.createElement("button");
     buttonItem_2.classList += 'button';
     buttonItem_2.innerHTML = "Delete 🗑️";
-    listItem.innerHTML = "<b>Aufgabe:</b>" + inputValue + "<br>" + "<b>Person:</b>" + person + "<br>" + "<b>Datum:</b>" + datum;
+    listItem.innerHTML = "<b>Aufgabe📚:</b>" + " " + inputValue + "<p></p>" + "<b>Person👥:</b>" + " " + person + "<p><p/>" + "<b>Datum🗓:</b>" + " " + datum;
     buttonItem.innerHTML = "Done→";
     listItem.appendChild(buttonItem);
     listItem.appendChild(buttonItem_2);
@@ -101,12 +100,13 @@ function verschiebenNachDone(evn, listItem, buttonItem) {
     })
 }
 
-function myFunction(){
-input.addEventListener("keyup", (event) => {
-    if (event.keyCode === 13) {
-      addItem();
-    }
-})}
+function myFunction() {
+    input.addEventListener("keyup", (event) => {
+        if (event.keyCode === 13) {
+            addItem();
+        }
+    })
+}
 
 // function myFunction_2(){
 // input_person.addEventListener("keyup", (event) => {

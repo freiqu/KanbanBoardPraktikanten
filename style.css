@@ -19,6 +19,7 @@ div {
 }
 .button {
     position: relative;
+    bottom: 50px;
     float: right;
 }
 #rot {
@@ -60,6 +61,7 @@ button:hover{
 }
 #todo_list {
     border: none;
+    
 }
 #formular {
     /* display: flex; */
